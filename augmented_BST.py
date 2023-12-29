@@ -1,5 +1,5 @@
 class Node:
-    def __init__(self, key):
+    def __init__(self, key) -> None:
         self.key = key
         self.left = self.right = None
         self.size = 1  # Augmentation
@@ -60,7 +60,7 @@ def main():
 
     low = 9
     hi = 57
-    
+
     result = rank(hi, root) - rank(low, root) + 1 if contains(hi, root) else rank(hi, root) - rank(low, root)
     print(result)
 
