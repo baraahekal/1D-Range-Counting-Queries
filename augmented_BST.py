@@ -5,6 +5,7 @@ class Node:
         self.size = 1  # Augmentation
 
 
+# Function time-complexity: O(log(n))
 def insert(root, key):
     if root is None:
         return Node(key)
@@ -16,10 +17,12 @@ def insert(root, key):
     return root
 
 
+# Function time-complexity: O(1)
 def size(node):
     return node.size if node else 0
 
 
+# Function time-complexity: O(log(n))
 def rank(x, node):
     if not node:
         return 0
@@ -29,6 +32,7 @@ def rank(x, node):
         return rank(x, node.right) + size(node.left) + 1
 
 
+# Function time-complexity: O(log(n))
 def contains(x, node):
     if not node:
         return False
