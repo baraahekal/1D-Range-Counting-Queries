@@ -5,9 +5,9 @@ class Node:
         self.size = 1  # Augmentation
 
 
-# Function time-complexity: O(log(n))
-def insert(root, key):
-    if root is None:
+# Function time-complexity in case of Balanced BST: Θ(log(n))
+def insert(root, key) -> Node:
+    if not root:
         return Node(key)
     if key < root.key:
         root.left = insert(root.left, key)
@@ -17,13 +17,13 @@ def insert(root, key):
     return root
 
 
-# Function time-complexity: O(1)
-def size(node):
+# Function time-complexity: Θ(1)
+def size(node) -> int:
     return node.size if node else 0
 
 
-# Function time-complexity: O(log(n))
-def rank(x, node):
+# Function time-complexity in case of Balanced BST: Θ(log(n))
+def rank(x, node) -> int:
     if not node:
         return 0
     elif x <= node.key:
@@ -32,8 +32,8 @@ def rank(x, node):
         return rank(x, node.right) + size(node.left) + 1
 
 
-# Function time-complexity: O(log(n))
-def contains(x, node):
+# Function time-complexity in case of Balanced BST: Θ(log(n))
+def contains(x, node) -> bool:
     if not node:
         return False
     elif x == node.key:
@@ -45,13 +45,13 @@ def contains(x, node):
 
 
 def main():
-    values = [1, 2, 3, 4, 5, 6]
+    values = [6, 4, 5, 3, 1, 2]
     root = None
     for value in values:
         root = insert(root, value)
 
-    low = 2
-    hi = 7
+    low = 10
+    hi = 12
 
     result = rank(hi, root) - rank(low, root) + 1 if contains(hi, root) else rank(hi, root) - rank(low, root)
     print(result)
