@@ -22,5 +22,5 @@ For handling dynamic datasets, a Binary Search Tree (BST) is more suitable. BSTs
 | Ordered Array         | \(n\)              | \(n\)              | \( \log(n) \)      | O(1)               |
 | Binary Search Tree    | \( \log(n) \)      | \( \log(n) \)      | \( \log(n) \)      | O(n)               |
 
-### Insertion in BST Demonestration
+### Insertion node (17) in BST Demonestration
 ![BST insertion_gif](assets/BSTInsert.gif)
