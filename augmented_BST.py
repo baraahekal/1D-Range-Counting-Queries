@@ -23,36 +23,44 @@ def size(node) -> int:
 
 
 # Function time-complexity in case of Balanced BST: Θ(log(n))
-def rank(x, node) -> int:
-    if not node:
-        return 0
-    elif x <= node.key:
-        return rank(x, node.left)
-    else:
-        return rank(x, node.right) + size(node.left) + 1
+def rank(x, root) -> int:
+    node_rank = 0
+    current = root
+
+    while current:
+        if x <= current.key:
+            current = current.left
+        else:
+            node_rank += size(current.left) + 1
+            current = current.right
+
+    return node_rank
 
 
 # Function time-complexity in case of Balanced BST: Θ(log(n))
-def contains(x, node) -> bool:
-    if not node:
-        return False
-    elif x == node.key:
-        return True
-    elif x < node.key:
-        return contains(x, node.left)
-    else:
-        return contains(x, node.right)
+def contains(x, root) -> bool:
+    current = root
+
+    while current:
+        if x == current.key:
+            return True
+        elif x < current.key:
+            current = current.left
+        else:
+            current = current.right
+
+    return False
 
 
 def main():
-    values = [6, 4, 5, 3, 1, 2]
+    values = [35, 11, 42, 9, 27, 36, 68, 5, 22, 30, 39, 57, 80]
     root = None
     for value in values:
         root = insert(root, value)
 
-    low = 10
-    hi = 12
-
+    low = 9
+    hi = 57
+    
     result = rank(hi, root) - rank(low, root) + 1 if contains(hi, root) else rank(hi, root) - rank(low, root)
     print(result)
 
