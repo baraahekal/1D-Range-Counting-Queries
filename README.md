@@ -6,11 +6,11 @@ The 1D range counting problem involves counting the number of elements within a 
 
 ## 📚 Which Data Structure to Use?
 
-### Naive Solution: Binary Search on Sorted Array
+### Naive Solution: I will not use extra space (DS), i will just [Binary Search](1D_range_query_binarySearch.cpp) on it
 
 Initially, Binary Search seems efficient for 1D Range Counting Queries on a sorted dataset. However, it falls short with dynamic operations like insertions and deletions, disrupting the sorted order.
 
-### ⚡️ Better Option: Binary Search Tree (BST)
+### ⚡️ Better Option: [Binary Search Tree](augmented_BST.py) (BST)
 
 For handling dynamic datasets, a Binary Search Tree (BST) is more suitable. BSTs allow for efficient insertions and deletions while maintaining an ordered structure, making them an optimal choice for 1D Range Counting Queries with changing data.
 
