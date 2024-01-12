@@ -1,5 +1,7 @@
 # 1D Range Counting Queries Problem
 
+## 🎥 [Youtube Video](https://youtu.be/tJUoeyNMZEM?si=AiKe3q6EgG3saD3X)
+
 ## 🗓️ Problem Description
 
 The 1D range counting problem involves counting the number of elements within a specified range in a one-dimensional dataset. This is a fundamental problem in computational geometry and databases, often addressed through range queries.
